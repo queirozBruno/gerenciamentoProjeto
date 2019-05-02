@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cargo.cs" />
     <Compile Include="Certificado.cs" />
     <Compile Include="CertificadoUsuario.cs" />
     <Compile Include="Competencia.cs" />
@@ -49,13 +50,19 @@
     <Compile Include="CursoUsuario.cs" />
     <Compile Include="Experiencia.cs" />
     <Compile Include="FormacaoAcademica.cs" />
+    <Compile Include="Funcao.cs" />
+    <Compile Include="FuncaoIntegrante.cs" />
+    <Compile Include="Funcionalidade.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="IdiomaUsuario.cs" />
+    <Compile Include="Integrante.cs" />
     <Compile Include="Linguagem.cs" />
     <Compile Include="LinguagemUsuario.cs" />
+    <Compile Include="Projeto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publicacao.cs" />
     <Compile Include="PublicacaoUsuario.cs" />
+    <Compile Include="Responsavel.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

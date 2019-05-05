@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class CertificadoUsuario
+    public class CertificadoUsuario
     {
         public long? CertificadoUsuarioId { get; set; }
         public DateTime CertificadoUsuarioDataEmissao { get; set; }

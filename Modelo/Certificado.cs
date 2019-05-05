@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Certificado
+    public class Certificado
     {
         public long? CertificadoId { get; set; }
         public string CertificadoNome { get; set; }

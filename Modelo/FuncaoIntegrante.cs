@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class FuncaoIntegrante
+    public class FuncaoIntegrante
     {
         public long? FuncaoIntegranteId { get; set; }
 

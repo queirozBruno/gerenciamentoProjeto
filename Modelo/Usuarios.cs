@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Usuarios
+    public class Usuarios
     {
         public long? UsuarioId { get; set; }
         public string UsuarioNome { get; set; }

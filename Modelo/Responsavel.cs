@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Responsavel
+    public class Responsavel
     {
         public long? ResponsavelId { get; set; }
 

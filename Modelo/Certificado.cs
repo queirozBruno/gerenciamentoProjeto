@@ -10,5 +10,7 @@ namespace Modelo
     {
         public long? CertificadoId { get; set; }
         public string CertificadoNome { get; set; }
+
+        public virtual ICollection<CertificadoUsuario> CertificadoUsuarios { get; set; }
     }
 }

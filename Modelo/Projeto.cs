@@ -12,5 +12,8 @@ namespace Modelo
         public string ProjetoNome { get; set; }
         public string ProjetoDescricao { get; set; }
         public string ProjetoStatus { get; set; }
+
+        public virtual ICollection<Integrante> Integrantes { get; set; }
+        public virtual ICollection<Funcionalidade> Funcionalidades { get; set; }
     }
 }

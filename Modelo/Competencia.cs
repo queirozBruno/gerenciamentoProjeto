@@ -10,5 +10,7 @@ namespace Modelo
     {
         public long? CompetenciaId { get; set; }
         public string CompetenciaNome { get; set; }
+
+        public virtual ICollection<CompetenciaUsuario> CompetenciaUsuarios { get; set; }
     }
 }

@@ -10,5 +10,7 @@ namespace Modelo
     {
         public long? FuncaoId { get; set; }
         public string FuncaoNome { get; set; }
+
+        public virtual ICollection<FuncaoIntegrante> FuncaoIntegrantes { get; set; }
     }
 }

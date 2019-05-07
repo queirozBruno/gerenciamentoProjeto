@@ -14,7 +14,10 @@ namespace Persistencia.DAL
         
         public void CriarCargo(Cargo cargo)
         {
-
+            if (cargo.CargoId <= 0)
+            {
+                context.cargos.Add(cargo);
+            }
         }
     }
 }

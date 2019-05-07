@@ -10,5 +10,7 @@ namespace Modelo
     {
         public long? IdiomaId { get; set; }
         public string IdiomaNome { get; set; }
+
+        public virtual ICollection<IdiomaUsuario> IdiomaUsuarios { get; set; }
     }
 }

@@ -18,5 +18,7 @@ namespace Modelo
         public long? ProjetoId { get; set; }
 
         public Modelo.Projeto projeto { get; set; }
+
+        public virtual ICollection<Responsavel> Responsavels { get; set; }
     }
 }

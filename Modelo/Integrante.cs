@@ -18,5 +18,8 @@ namespace Modelo
         public Modelo.Projeto projeto { get; set; }
         public Modelo.Usuarios usuarios { get; set; }
         public Modelo.Cargo cargo { get; set; }
+
+        public virtual ICollection<FuncaoIntegrante> FuncaoIntegrantes { get; set; }
+        public virtual ICollection<Responsavel> Responsavels { get; set; }
     }
 }

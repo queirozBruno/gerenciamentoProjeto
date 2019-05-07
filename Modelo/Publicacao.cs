@@ -13,5 +13,7 @@ namespace Modelo
         public string PublicacaoEditora { get; set; }
         public DateTime PublicaçãoData { get; set; }
         public string PublicacaoUrl { get; set; }
+
+        public virtual ICollection<PublicacaoUsuario> PublicacaoUsuarios { get; set; }
     }
 }

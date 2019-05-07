@@ -10,5 +10,7 @@ namespace Modelo
     {
         public long? CargoId { get; set; }
         public string CargoNome { get; set; }
+
+        public virtual ICollection<Integrante> Integrantes { get; set; }
     }
 }

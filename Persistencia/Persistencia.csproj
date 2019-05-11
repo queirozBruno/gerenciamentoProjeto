@@ -57,6 +57,16 @@
     <Compile Include="DAL\CompetenciaUsuarioDAL.cs" />
     <Compile Include="DAL\CursoDAL.cs" />
     <Compile Include="DAL\CursoUsuarioDAL.cs" />
+    <Compile Include="DAL\ExperienciaDAL.cs" />
+    <Compile Include="DAL\FormacaoAcademicaDAL.cs" />
+    <Compile Include="DAL\FuncaoDAL.cs" />
+    <Compile Include="DAL\FuncaoIntegranteDAL.cs" />
+    <Compile Include="DAL\FuncionalidadeDAL.cs" />
+    <Compile Include="DAL\IdiomaDAL.cs" />
+    <Compile Include="DAL\IdiomaUsuarioDAL.cs" />
+    <Compile Include="DAL\IntegranteDAL.cs" />
+    <Compile Include="DAL\LinguagemDAL.cs" />
+    <Compile Include="DAL\LinguagemUsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

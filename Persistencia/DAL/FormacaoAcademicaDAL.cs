@@ -28,7 +28,7 @@ namespace Persistencia.DAL
 
         public FormacaoAcademica ObterFormacaoAcademicaPorId(long id)
         {
-            return context.formacaoAcademicas.Where(fa => fa.FormacaoId == id).Include(u => u.usuarios).First();
+            return context.formacaoAcademicas.Where(fa => fa.FormacaoId == id).Include(u => u.usuario).First();
         }
 
         public FormacaoAcademica EliminarFormacaoAcademica(long id)

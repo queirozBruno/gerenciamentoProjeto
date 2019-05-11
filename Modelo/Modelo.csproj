@@ -70,7 +70,7 @@
     <Compile Include="Publicacao.cs" />
     <Compile Include="PublicacaoUsuario.cs" />
     <Compile Include="Responsavel.cs" />
-    <Compile Include="Usuarios.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

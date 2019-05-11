@@ -28,7 +28,7 @@ namespace Persistencia.DAL
 
         public Integrante ObterIntegrantePorId(long id)
         {
-            return context.integrantes.Where(i => i.IntegranteId == id).Include(p => p.projeto).Include(u => u.usuarios).Include(c => c.cargo).First();
+            return context.integrantes.Where(i => i.IntegranteId == id).Include(p => p.projeto).Include(u => u.usuario).Include(c => c.cargo).First();
         }
 
         public Integrante EliminarIntegrante(long id)

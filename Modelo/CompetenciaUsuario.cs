@@ -13,7 +13,7 @@ namespace Modelo
         public long? UsuarioId { get; set; }
         public long? CompetenciaId { get; set; }
 
-        public Modelo.Usuarios usuarios { get; set; }
+        public Modelo.Usuario usuario { get; set; }
         public Modelo.Competencia competencia { get; set; }
     }
 }

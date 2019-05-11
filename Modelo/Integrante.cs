@@ -16,7 +16,7 @@ namespace Modelo
         public long? CargoId { get; set; }
 
         public Modelo.Projeto projeto { get; set; }
-        public Modelo.Usuarios usuarios { get; set; }
+        public Modelo.Usuario usuario { get; set; }
         public Modelo.Cargo cargo { get; set; }
 
         public virtual ICollection<FuncaoIntegrante> FuncaoIntegrantes { get; set; }

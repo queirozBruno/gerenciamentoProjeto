@@ -18,6 +18,6 @@ namespace Modelo
 
         public long? UsuarioId { get; set; }
 
-        public Modelo.Usuarios usuarios { get; set; }
+        public Modelo.Usuario usuario { get; set; }
     }
 }

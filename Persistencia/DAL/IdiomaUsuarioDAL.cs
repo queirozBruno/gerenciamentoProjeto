@@ -28,7 +28,7 @@ namespace Persistencia.DAL
 
         public IdiomaUsuario ObterIdiomaUsuarioPorId(long id)
         {
-            return context.idiomaUsuarios.Where(iu => iu.IdiomaUsuarioId == id).Include(i => i.idioma).Include(u => u.usuarios).First();
+            return context.idiomaUsuarios.Where(iu => iu.IdiomaUsuarioId == id).Include(i => i.idioma).Include(u => u.usuario).First();
         }
 
         public IdiomaUsuario EliminarIdiomaUsuario(long id)

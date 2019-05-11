@@ -30,7 +30,7 @@ namespace Persistencia.DAL
         //Leitura
         public CursoUsuario ObterCursoUsuarioPorId(long id)
         {
-            return context.cursoUsuarios.Where(cu => cu.CursoUsuarioId == id).Include(c => c.curso).Include(u => u.usuarios).First();
+            return context.cursoUsuarios.Where(cu => cu.CursoUsuarioId == id).Include(c => c.curso).Include(u => u.usuario).First();
         }
 
         //Delete

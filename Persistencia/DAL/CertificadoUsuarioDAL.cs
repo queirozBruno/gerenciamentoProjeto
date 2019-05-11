@@ -31,7 +31,7 @@ namespace Persistencia.DAL
         //Leitura
         public CertificadoUsuario ObterCertificadoUsuarioPorId(long id) //Tem que ser IQueryable no lugar de CertificadoUsuario, mas dá erro
         {
-            return context.certificadoUsuarios.Where(cul => cul.CertificadoUsuarioId == id).Include(c => c.certificado).Include(u => u.usuarios).First();
+            return context.certificadoUsuarios.Where(cul => cul.CertificadoUsuarioId == id).Include(c => c.certificado).Include(u => u.usuario).First();
         }
 
         //Delete

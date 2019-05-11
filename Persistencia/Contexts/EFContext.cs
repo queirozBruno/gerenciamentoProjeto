@@ -41,7 +41,7 @@ namespace Persistencia.Contexts
         public DbSet<Publicacao> publicacaos { get; set; }
         public DbSet<PublicacaoUsuario> publicacaoUsuarios { get; set; }
         public DbSet<Responsavel> responsavels { get; set; }
-        public DbSet<Usuarios> usuarios { get; set; }
+        public DbSet<Usuario> usuarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

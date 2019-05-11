@@ -67,6 +67,11 @@
     <Compile Include="DAL\IntegranteDAL.cs" />
     <Compile Include="DAL\LinguagemDAL.cs" />
     <Compile Include="DAL\LinguagemUsuarioDAL.cs" />
+    <Compile Include="DAL\ProjetoDAL.cs" />
+    <Compile Include="DAL\PublicacaoDAL.cs" />
+    <Compile Include="DAL\PublicacaoUsuarioDAL.cs" />
+    <Compile Include="DAL\ResponsavelDAL.cs" />
+    <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

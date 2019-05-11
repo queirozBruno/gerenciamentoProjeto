@@ -28,7 +28,7 @@ namespace Persistencia.DAL
 
         public Experiencia ObterExperienciaPorId(long id)
         {
-            return context.experiencias.Where(e => e.ExperienciaId == id).Include(u => u.usuarios).First();
+            return context.experiencias.Where(e => e.ExperienciaId == id).Include(u => u.usuario).First();
         }
 
         public Experiencia EliminarExperiencia(long id)

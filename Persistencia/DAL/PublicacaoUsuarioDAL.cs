@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Persistencia.Contexts;
+using Modelo;
+using System.Data.Entity;
+
+namespace Persistencia.DAL
+{
+    class PublicacaoUsuarioDAL
+    {
+        private EFContext context = new EFContext();
+
+        public void CriarPublicacaoUsuario(PublicacaoUsuario publicacaoUsuario)
+        {
+            if (publicacaoUsuario.PublicacaoUsuarioId == null)
+            {
+                context.publicacaoUsuarios.Add(publicacaoUsuario);
+            }
+            else
+            {
+                context.Entry(publicacaoUsuario).State = EntityState.Modified;
+            }
+            context.SaveChanges();
+        }
+
+        public PublicacaoUsuario ObterPublicacaoUsuarioPorId(long id)
+        {
+            return context.publicacaoUsuarios.Where(pu => pu.PublicacaoUsuarioId == id).Include(p => p.publicacao).Include(u => u.usuario).First();
+        }
+
+        public PublicacaoUsuario EliminarPublicacaoUsuario(long id)
+        {
+            PublicacaoUsuario publicacaoUsuario = ObterPublicacaoUsuarioPorId(id);
+            context.publicacaoUsuarios.Remove(publicacaoUsuario);
+            context.SaveChanges();
+            return publicacaoUsuario;
+        }
+    }
+}

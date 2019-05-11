@@ -30,7 +30,7 @@ namespace Persistencia.DAL
         //Leitura
         public CompetenciaUsuario ObterCompetenciUsuarioaPorId(long id)
         {
-            return context.competenciaUsuarios.Where(cu => cu.CompetenciaUsuarioId == id).Include(c => c.competencia).Include(u => u.usuarios).First();
+            return context.competenciaUsuarios.Where(cu => cu.CompetenciaUsuarioId == id).Include(c => c.competencia).Include(u => u.usuario).First();
         }
 
         //Delete

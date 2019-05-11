@@ -24,5 +24,5 @@ namespace Modelo
         public virtual ICollection<CertificadoUsuario> CertificadoUsuarios { get; set; }
         public virtual ICollection<IdiomaUsuario> IdiomaUsuarios { get; set; }
         public virtual ICollection<LinguagemUsuario> LinguagemUsuarios { get; set; }
-}
+    }
 }

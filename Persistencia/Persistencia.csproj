@@ -51,6 +51,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Contexts\EFContext.cs" />
     <Compile Include="DAL\CargoDAL.cs" />
+    <Compile Include="DAL\CertificadoDAL.cs" />
+    <Compile Include="DAL\CertificadoUsuarioDAL.cs" />
+    <Compile Include="DAL\CompetenciaDAL.cs" />
+    <Compile Include="DAL\CompetenciaUsuarioDAL.cs" />
+    <Compile Include="DAL\CursoDAL.cs" />
+    <Compile Include="DAL\CursoUsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

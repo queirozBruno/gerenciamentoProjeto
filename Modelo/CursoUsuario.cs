@@ -8,6 +8,8 @@ namespace Modelo
 {
     public class CursoUsuario
     {
+        public long? CursoUsuarioId { get; set; }
+
         public long? CursoId { get; set; }
         public long? UsuarioId { get; set; }
 

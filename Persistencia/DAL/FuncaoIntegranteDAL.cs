@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class FuncaoIntegranteDAL
+    public class FuncaoIntegranteDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarFuncaoIntegrante(FuncaoIntegrante funcaoIntegrante)
+        public void GravarFuncaoIntegrante(FuncaoIntegrante funcaoIntegrante)
         {
             if (funcaoIntegrante.FuncaoIntegranteId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.funcaoIntegrantes.Where(fi => fi.FuncaoIntegranteId == id).Include(f => f.funcao).Include(i => i.integrante).First();
         }
 
-        public FuncaoIntegrante EliminarFuncaoIntegrante(long id)
+        public FuncaoIntegrante EliminarFuncaoIntegrantePorId(long id)
         {
             FuncaoIntegrante funcaoIntegrante = ObterFuncaoIntegrantePorId(id);
             context.funcaoIntegrantes.Remove(funcaoIntegrante);

@@ -9,12 +9,12 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class CursoUsuarioDAL
+    public class CursoUsuarioDAL
     {
         private EFContext context = new EFContext();
 
         //Inserção e atualização
-        public void CriarCursoUsuario(CursoUsuario cursoUsuario)
+        public void GravarCursoUsuario(CursoUsuario cursoUsuario)
         {
             if (cursoUsuario.CursoUsuarioId == null)
             {
@@ -34,7 +34,7 @@ namespace Persistencia.DAL
         }
 
         //Delete
-        public CursoUsuario EliminarCursoUsuario(long id)
+        public CursoUsuario EliminarCursoUsuarioPorId(long id)
         {
             CursoUsuario cursoUsuario = ObterCursoUsuarioPorId(id);
             context.cursoUsuarios.Remove(cursoUsuario);

@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class FormacaoAcademicaDAL
+    public class FormacaoAcademicaDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarFormacaoAcademica(FormacaoAcademica formacaoAcademica)
+        public void GravarFormacaoAcademica(FormacaoAcademica formacaoAcademica)
         {
             if (formacaoAcademica.FormacaoId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.formacaoAcademicas.Where(fa => fa.FormacaoId == id).Include(u => u.usuario).First();
         }
 
-        public FormacaoAcademica EliminarFormacaoAcademica(long id)
+        public FormacaoAcademica EliminarFormacaoAcademicaPorId(long id)
         {
             FormacaoAcademica formacaoAcademica = ObterFormacaoAcademicaPorId(id);
             context.formacaoAcademicas.Remove(formacaoAcademica);

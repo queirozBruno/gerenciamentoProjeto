@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class FuncionalidadeDAL
+    public class FuncionalidadeDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarFuncionalidade(Funcionalidade funcionalidade)
+        public void GravarFuncionalidade(Funcionalidade funcionalidade)
         {
             if (funcionalidade.FuncionalidadeId == null)
             {
@@ -30,7 +30,7 @@ namespace Persistencia.DAL
             return context.funcionalidades.Where(f => f.FuncionalidadeId == id).Include(p => p.projeto).First();
         }
 
-        public Funcionalidade EliminarFuncionalidade(long id)
+        public Funcionalidade EliminarFuncionalidadePorId(long id)
         {
             Funcionalidade funcionalidade = ObterFuncionalidadePorId(id);
             context.funcionalidades.Remove(funcionalidade);

@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class ResponsavelDAL
+    public class ResponsavelDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarResponsavel(Responsavel responsavel)
+        public void GravarResponsavel(Responsavel responsavel)
         {
             if (responsavel.ResponsavelId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.responsavels.Where(r => r.ResponsavelId == id).Include(i => i.integrante).Include(f => f.funcionalidade).First();
         }
 
-        public Responsavel EliminarResponsavel(long id)
+        public Responsavel EliminarResponsavelPorId(long id)
         {
             Responsavel responsavel = ObterResponsavelPorId(id);
             context.responsavels.Remove(responsavel);

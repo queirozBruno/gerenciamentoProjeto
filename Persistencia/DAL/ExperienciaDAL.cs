@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class ExperienciaDAL
+    public class ExperienciaDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarExperiencia (Experiencia experiencia)
+        public void GravarExperiencia(Experiencia experiencia)
         {
             if (experiencia.ExperienciaId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.experiencias.Where(e => e.ExperienciaId == id).Include(u => u.usuario).First();
         }
 
-        public Experiencia EliminarExperiencia(long id)
+        public Experiencia EliminarExperienciaPorId(long id)
         {
             Experiencia experiencia = ObterExperienciaPorId(id);
             context.experiencias.Remove(experiencia);

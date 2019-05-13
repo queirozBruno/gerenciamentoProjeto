@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class PublicacaoDAL
+    public class PublicacaoDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarPublicacao(Publicacao publicacao)
+        public void GravarPublicacao(Publicacao publicacao)
         {
             if (publicacao.PublicacaoId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.publicacaos.Where(p => p.PublicacaoId == id).First();
         }
 
-        public Publicacao EliminarPublicacao(long id)
+        public Publicacao EliminarPublicacaoPorId(long id)
         {
             Publicacao publicacao = ObterPublicacaoPorId(id);
             context.publicacaos.Remove(publicacao);

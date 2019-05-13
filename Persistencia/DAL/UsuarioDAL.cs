@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class UsuarioDAL
+    public class UsuarioDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarUsuarios(Usuario usuario)
+        public void GravarUsuarios(Usuario usuario)
         {
             if (usuario.UsuarioId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.usuarios.Where(u => u.UsuarioId == id).First();
         }
 
-        public Usuario EliminarUsuario(long id)
+        public Usuario EliminarUsuarioPorId(long id)
         {
             Usuario usuario = ObterUsuarioPorId(id);
             context.usuarios.Remove(usuario);

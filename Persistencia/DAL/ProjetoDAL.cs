@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class ProjetoDAL
+    public class ProjetoDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarProjeto(Projeto projeto)
+        public void GravarProjeto(Projeto projeto)
         {
             if (projeto.ProjetoId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.projetos.Where(p => p.ProjetoId == id).First();
         }
 
-        public Projeto EliminarProjeto(long id)
+        public Projeto EliminarProjetoPorId(long id)
         {
             Projeto projeto = ObterProjetoPorId(id);
             context.projetos.Remove(projeto);

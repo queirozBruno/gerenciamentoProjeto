@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class IdiomaDAL
+    public class IdiomaDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarIdioma(Idioma idioma)
+        public void GravarIdioma(Idioma idioma)
         {
             if (idioma.IdiomaId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.idiomas.Where(i => i.IdiomaId == id).First();
         }
 
-        public Idioma EliminarIdioma(long id)
+        public Idioma EliminarIdiomaPorId(long id)
         {
             Idioma idioma = ObterIdiomaPorId(id);
             context.idiomas.Remove(idioma);

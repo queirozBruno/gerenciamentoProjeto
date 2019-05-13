@@ -9,12 +9,12 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class CompetenciaUsuarioDAL
+    public class CompetenciaUsuarioDAL
     {
         private EFContext context = new EFContext();
 
         //Inserção e atualização
-        public void CriarCompetenciaUsuario(CompetenciaUsuario competenciaUsuario)
+        public void GravarCompetenciaUsuario(CompetenciaUsuario competenciaUsuario)
         {
             if (competenciaUsuario.CompetenciaUsuarioId == null)
             {
@@ -34,7 +34,7 @@ namespace Persistencia.DAL
         }
 
         //Delete
-        public CompetenciaUsuario EliminarCompetenciaUsuario(long id)
+        public CompetenciaUsuario EliminarCompetenciaUsuarioPorId(long id)
         {
             CompetenciaUsuario competenciaUsuario = ObterCompetenciUsuarioaPorId(id);
             context.competenciaUsuarios.Remove(competenciaUsuario);

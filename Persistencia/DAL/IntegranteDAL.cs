@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class IntegranteDAL
+    public class IntegranteDAL
     {
         private EFContext context = new EFContext();
 
-        public void CriarIntegrante(Integrante integrante)
+        public void GravarIntegrante(Integrante integrante)
         {
             if (integrante.IntegranteId == null)
             {
@@ -31,7 +31,7 @@ namespace Persistencia.DAL
             return context.integrantes.Where(i => i.IntegranteId == id).Include(p => p.projeto).Include(u => u.usuario).Include(c => c.cargo).First();
         }
 
-        public Integrante EliminarIntegrante(long id)
+        public Integrante EliminarIntegrantePorId(long id)
         {
             Integrante integrante = ObterIntegrantePorId(id);
             context.integrantes.Remove(integrante);

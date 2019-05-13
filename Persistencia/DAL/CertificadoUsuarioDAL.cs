@@ -9,13 +9,13 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class CertificadoUsuarioDAL
+    public class CertificadoUsuarioDAL
     {
         private EFContext context = new EFContext();
 
 
         //Inserção e atualização
-        public void CriarCertificadoUsuario(CertificadoUsuario certificadoUsuario)
+        public void GravarCertificadoUsuario(CertificadoUsuario certificadoUsuario)
         {
             if (certificadoUsuario.CertificadoUsuarioId == null)
             {
@@ -35,7 +35,7 @@ namespace Persistencia.DAL
         }
 
         //Delete
-        public CertificadoUsuario EliminarCertificadoUsuario(long id)
+        public CertificadoUsuario EliminarCertificadoUsuarioPorId(long id)
         {
             CertificadoUsuario certificadoUsuario = ObterCertificadoUsuarioPorId(id);
             context.certificadoUsuarios.Remove(certificadoUsuario);

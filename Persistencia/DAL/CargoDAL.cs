@@ -9,12 +9,17 @@ using System.Data.Entity;
 
 namespace Persistencia.DAL
 {
-    class CargoDAL
+    public class CargoDAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCargosClassificadosPorNome()
+        {
+            return context.cargos.OrderBy(n => n.CargoNome);
+        }
+
         //Esta operação serve tanto para inserção quanto para atualização
-        public void CriarCargo(Cargo cargo)
+        public void GravarCargo(Cargo cargo)
         {
             if (cargo.CargoId == null)
             {
@@ -33,7 +38,7 @@ namespace Persistencia.DAL
             return context.cargos.Where(c => c.CargoId == id).First();
         }
 
-        public Cargo EliminarCargo(long id)
+        public Cargo EliminarCargoPorId(long id)
         {
             Cargo cargo = ObterCargoPorId(id);
             context.cargos.Remove(cargo);

@@ -13,7 +13,6 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
-
         //Inserção e atualização
         public void GravarCertificadoUsuario(CertificadoUsuario certificadoUsuario)
         {

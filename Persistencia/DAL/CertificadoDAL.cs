@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCertificadosClassificadosPorNome()
+        {
+            return context.certificados.OrderBy(n => n.CertificadoNome);
+        }
+
         //Inserção e atualização
         public void GravarCertificado(Certificado certificado)
         {

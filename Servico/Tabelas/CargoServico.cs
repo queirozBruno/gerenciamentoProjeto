@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class CargoServico
+    public class CargoServico
     {
         private CargoDAL cargoDAL = new CargoDAL();
 

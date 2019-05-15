@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class CertificadoUsuarioServico
+    public class CertificadoUsuarioServico
     {
         private CertificadoUsuarioDAL certificadoUsuarioDAL = new CertificadoUsuarioDAL();
 

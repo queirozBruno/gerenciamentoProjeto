@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class IntegranteServico
+    public class IntegranteServico
     {
         private IntegranteDAL integranteDAL = new IntegranteDAL();
 

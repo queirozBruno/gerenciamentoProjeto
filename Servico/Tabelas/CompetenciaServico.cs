@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class CompetenciaServico
+    public class CompetenciaServico
     {
         private CompetenciaDAL competenciaDAL = new CompetenciaDAL();
 

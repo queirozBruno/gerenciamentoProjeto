@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class FuncaoIntegranteServico
+    public class FuncaoIntegranteServico
     {
         private FuncaoIntegranteDAL funcaoIntegranteDAL = new FuncaoIntegranteDAL();
 

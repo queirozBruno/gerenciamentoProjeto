@@ -1,0 +1,74 @@
+﻿@model Modelo.Usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Usuario</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UsuarioNome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsuarioNome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UsuarioSobrenome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsuarioSobrenome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UsuarioSenha)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsuarioSenha)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UsuarioEmail)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsuarioEmail)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UsuarioCPF)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsuarioCPF)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UsuarioTelefone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsuarioTelefone)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UsuarioId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

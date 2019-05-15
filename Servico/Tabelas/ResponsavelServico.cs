@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class ResponsavelServico
+    public class ResponsavelServico
     {
         private ResponsavelDAL responsavelDAL = new ResponsavelDAL();
 

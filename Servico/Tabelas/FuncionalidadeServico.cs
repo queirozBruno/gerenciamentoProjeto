@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class FuncionalidadeServico
+    public class FuncionalidadeServico
     {
         private FuncionalidadeDAL funcionalidadeDAL = new FuncionalidadeDAL();
 

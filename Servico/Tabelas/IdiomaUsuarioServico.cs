@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class IdiomaUsuarioServico
+    public class IdiomaUsuarioServico
     {
         private IdiomaUsuarioDAL idiomaUsuarioDAL = new IdiomaUsuarioDAL();
 

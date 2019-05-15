@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class CursoServico
+    public class CursoServico
     {
         private CursoDAL cursoDAL = new CursoDAL();
 

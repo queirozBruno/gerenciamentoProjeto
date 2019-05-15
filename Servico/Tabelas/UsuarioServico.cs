@@ -8,9 +8,14 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class UsuarioServico
+    public class UsuarioServico
     {
         private UsuarioDAL usuarioDAL = new UsuarioDAL();
+
+        //public IQueryable ObterUsuariosClassificadosPorNome()
+        //{
+        //    return usuarioDAL.ObterUsuariosClassificadosPorNome();
+        //}
 
         public void GravarUsuario(Usuario usuario)
         {

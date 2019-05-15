@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class FormacaoAcademicaServico
+    public class FormacaoAcademicaServico
     {
         private FormacaoAcademicaDAL formacaoAcademicaDAL = new FormacaoAcademicaDAL();
 

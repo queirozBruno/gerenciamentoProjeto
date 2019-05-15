@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Servico.Tabelas
 {
-    class ExperienciaServico
+    public class ExperienciaServico
     {
         private ExperienciaDAL experienciaDAL = new ExperienciaDAL();
 

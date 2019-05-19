@@ -12,10 +12,10 @@ namespace Servico.Tabelas
     {
         private UsuarioDAL usuarioDAL = new UsuarioDAL();
 
-        //public IQueryable ObterUsuariosClassificadosPorNome()
-        //{
-        //    return usuarioDAL.ObterUsuariosClassificadosPorNome();
-        //}
+        public IQueryable ObterUsuariosClassificadosPorNome()
+        {
+            return usuarioDAL.ObterUsuariosClassificadosPorNome();
+        }
 
         public void GravarUsuario(Usuario usuario)
         {

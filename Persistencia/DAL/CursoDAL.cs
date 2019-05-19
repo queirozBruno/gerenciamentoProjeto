@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCursosClassificadosPorNome()
+        {
+            return context.cursos.OrderBy(n => n.CursoNome);
+        }
+
         //Inserção e atualização
         public void GravarCurso(Curso curso)
         {

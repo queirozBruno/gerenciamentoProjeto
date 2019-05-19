@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Contexts\EFContext.cs" />
     <Compile Include="DAL\CargoDAL.cs" />
     <Compile Include="DAL\CertificadoDAL.cs" />

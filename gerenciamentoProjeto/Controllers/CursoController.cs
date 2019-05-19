@@ -10,91 +10,89 @@ using Servico.Tabelas;
 
 namespace gerenciamentoProjeto.Controllers
 {
-    public class UsuarioController : Controller
+    public class CursoController : Controller
     {
-        private UsuarioServico usuarioServico = new UsuarioServico();
+        private CursoServico cursoServico = new CursoServico();
 
-        // GET: Usuario
+        // GET: Curso
         public ActionResult Index()
         {
-            return View(usuarioServico.ObterUsuariosClassificadosPorNome());
+            return View(cursoServico.ObterCursosClassificadosPorNome());
         }
 
-        private ActionResult ObterVisaoUsuarioPorId(long? id)
+        private ActionResult ObterVisaoCursoPorId(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = usuarioServico.ObterUsuarioPorId((long)id);
-            if (usuario == null)
+            Curso curso = cursoServico.ObterCursoPorId((long)id);
+            if (curso == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(curso);
         }
-        
-        ActionResult GravarUsuario(Usuario usuario)
+
+        ActionResult GravarCurso(Curso curso)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    usuarioServico.GravarUsuario(usuario);
+                    cursoServico.GravarCurso(curso);
                     return RedirectToAction("Index");
                 }
-                return View(usuario);
+                return View(curso);
             }
             catch
             {
-                return View(usuario);
+                return View(curso);                
             }
         }
 
         public ActionResult Details(long? id)
         {
-            return ObterVisaoUsuarioPorId(id);
+            return ObterVisaoCursoPorId(id);
         }
 
-        // GET
+        //GET
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST
+        //POST
         [HttpPost]
-        public ActionResult Create(Usuario usuario)
+        public ActionResult Create(Curso curso)
         {
-            return GravarUsuario(usuario);
+            return GravarCurso(curso);
         }
-
-        // GET
+        
+        //GET
         public ActionResult Edit(long? id)
         {
-            return ObterVisaoUsuarioPorId(id);
+            return ObterVisaoCursoPorId(id);
         }
 
-        // POST
-        [HttpPost]
-        public ActionResult Edit(Usuario usuario)
+        //POST
+        public ActionResult Edit(Curso curso)
         {
-            return GravarUsuario(usuario);
+            return GravarCurso(curso);
         }
 
-        // GET
+        //GET
         public ActionResult Delete(long? id)
         {
-            return ObterVisaoUsuarioPorId(id);
+            return ObterVisaoCursoPorId(id);
         }
 
-        // POST
-        [HttpPost]
+        //POST
         public ActionResult Delete(long id)
         {
             try
             {
-                Usuario usuario = usuarioServico.EliminarUsuarioPorId(id);
+                Curso curso = cursoServico.EliminarCursoPorId(id);
                 return RedirectToAction("Index");
             }
             catch

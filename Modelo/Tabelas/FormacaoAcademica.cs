@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Modelo
 {
     public class FormacaoAcademica
     {
+        [Key]
         public long? FormacaoId { get; set; }
         public string FormacaoInstituicao { get; set; }
         public string FormacaoFormacao { get; set; }

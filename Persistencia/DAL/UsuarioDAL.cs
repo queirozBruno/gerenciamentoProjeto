@@ -13,10 +13,10 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
-        //public IQueryable ObterUsuariosClassificadosPorNome()
-        //{
-        //    return context.usuarios.OrderBy(n => n.UsuarioNome);
-        //}
+        public IQueryable ObterUsuariosClassificadosPorNome()
+        {
+            return context.usuarios.OrderBy(n => n.UsuarioNome);
+        }
 
         public void GravarUsuarios(Usuario usuario)
         {

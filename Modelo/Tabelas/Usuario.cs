@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Modelo
 {
     public class Usuario
     {
+        [Key]
         public long? UsuarioId { get; set; }
         public string UsuarioNome { get; set; }
         public string UsuarioSobrenome { get; set; }

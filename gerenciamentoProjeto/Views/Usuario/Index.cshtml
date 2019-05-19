@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Modelo.Usuario>
+
 @{
     Layout = null;
 }
@@ -11,8 +12,60 @@
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <a href="Create">Cadastrar usuário</a>
-    </div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioSobrenome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioSenha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioCPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioTelefone)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioSobrenome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioSenha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioCPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioTelefone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UsuarioId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioId })
+            </td>
+        </tr>
+    }
+    
+    </table>
 </body>
 </html>

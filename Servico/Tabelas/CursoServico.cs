@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private CursoDAL cursoDAL = new CursoDAL();
 
+        public IQueryable ObterCursosClassificadosPorNome()
+        {
+            return cursoDAL.ObterCursosClassificadosPorNome();
+        }
+
         public void GravarCurso(Curso curso)
         {
             cursoDAL.GravarCurso(curso);

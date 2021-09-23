@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCompetenciaClassificadasPorNome()
+        {
+            return context.competencias.OrderBy(n => n.CompetenciaNome);
+        }
+
         //Inserção e atualização
         public void GravarCompetencia(Competencia competencia)
         {
@@ -41,5 +46,9 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return competencia;
         }
+
+        public Competencia ObterCompetenciaPorNome(string competencia) => context.competencias.Where(i => i.CompetenciaNome.ToUpper() == competencia.ToUpper()).FirstOrDefault();
+
+        public bool VerificaSeCompetenciaExiste(string competencia) => context.competencias.Where(i => i.CompetenciaNome.ToUpper() == competencia.ToUpper()).Any();
     }
 }

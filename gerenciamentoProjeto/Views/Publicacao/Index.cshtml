@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Modelo.Publicacao>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicacaoTitulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicacaoEditora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicaçãoData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicacaoUrl)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicacaoTitulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicacaoEditora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicaçãoData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicacaoUrl)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PublicacaoId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PublicacaoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PublicacaoId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

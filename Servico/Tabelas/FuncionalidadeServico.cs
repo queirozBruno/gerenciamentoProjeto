@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private FuncionalidadeDAL funcionalidadeDAL = new FuncionalidadeDAL();
 
+        public IQueryable ObterFuncionalidadesClassificadasPorNome(long ProjetoId)
+        {
+            return funcionalidadeDAL.ObterFuncionalidadesClassificadasPorNome(ProjetoId);
+        }
+
         public void GravarFuncionalidade(Funcionalidade funcionalidade)
         {
             funcionalidadeDAL.GravarFuncionalidade(funcionalidade);

@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private CompetenciaUsuarioDAL competenciaUsuarioDAL = new CompetenciaUsuarioDAL();
 
+        public IQueryable ObterCompetenciaUsuariosClassificadosPorNome()
+        {
+            return competenciaUsuarioDAL.ObterCompetenciaUsuariosClassificadosPorNome();
+        }
+
         public void GravarCompetenciaUsuario(CompetenciaUsuario competencia)
         {
             competenciaUsuarioDAL.GravarCompetenciaUsuario(competencia);
@@ -26,5 +31,7 @@ namespace Servico.Tabelas
         {
             return competenciaUsuarioDAL.EliminarCompetenciaUsuarioPorId(id);
         }
+
+        public IQueryable ObterCompetenciaUsuarioPorUsuarioId(long id) => competenciaUsuarioDAL.ObterCompetenciaUsuarioPorUsuarioId(id);
     }
 }

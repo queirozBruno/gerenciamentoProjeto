@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterLinguagensClassificadasPorNome()
+        {
+            return context.linguagems.OrderBy(n => n.LinguagemNome);
+        }
+
         public void GravarLinguagem(Linguagem linguagem)
         {
             if (linguagem.LinguagemId == null)
@@ -38,5 +43,9 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return linguagem;
         }
+
+        public Linguagem ObterLinguagemPorNome(string linguagem) => context.linguagems.Where(i => i.LinguagemNome.ToUpper() == linguagem.ToUpper()).FirstOrDefault();
+
+        public bool VerificaSeLinguagemExiste(string linguagem) => context.linguagems.Where(i => i.LinguagemNome.ToUpper() == linguagem.ToUpper()).Any();
     }
 }

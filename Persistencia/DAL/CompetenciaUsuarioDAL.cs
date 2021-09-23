@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCompetenciaUsuariosClassificadosPorNome()
+        {
+            return context.competenciaUsuarios.Include(c => c.competencia).Include(u => u.usuario).OrderBy(cu => cu.competencia.CompetenciaNome);
+        }
+
         //Inserção e atualização
         public void GravarCompetenciaUsuario(CompetenciaUsuario competenciaUsuario)
         {
@@ -41,5 +46,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return competenciaUsuario;
         }
+
+        public IQueryable ObterCompetenciaUsuarioPorUsuarioId(long id) => context.competenciaUsuarios.Where(iu => iu.UsuarioId == id).Include(i => i.competencia);
     }
 }

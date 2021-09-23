@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCertificadoUsuarioClassificadosPorNome()
+        {
+            return context.certificadoUsuarios.Include(c => c.certificado).Include(u => u.usuario).OrderBy(n => n.usuario.UsuarioNome);
+        }
+
         //Inserção e atualização
         public void GravarCertificadoUsuario(CertificadoUsuario certificadoUsuario)
         {
@@ -28,7 +33,7 @@ namespace Persistencia.DAL
         }
 
         //Leitura
-        public CertificadoUsuario ObterCertificadoUsuarioPorId(long id) //Tem que ser IQueryable no lugar de CertificadoUsuario, mas dá erro
+        public CertificadoUsuario ObterCertificadoUsuarioPorId(long id)
         {
             return context.certificadoUsuarios.Where(cul => cul.CertificadoUsuarioId == id).Include(c => c.certificado).Include(u => u.usuario).First();
         }
@@ -41,5 +46,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return certificadoUsuario;
         }
+
+        public IQueryable ObterCertificadoUsuarioPorUsuarioId(long id) => context.certificadoUsuarios.Where(iu => iu.UsuarioId == id).Include(i => i.certificado);
     }
 }

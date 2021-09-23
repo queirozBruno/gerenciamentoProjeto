@@ -11,6 +11,16 @@ namespace Servico.Tabelas
     public class ProjetoServico
     {
         private ProjetoDAL projetoDAL = new ProjetoDAL();
+        
+        public long? ObterUltimoProjetoPorId()
+        {
+            return projetoDAL.ObterUltimoProjetoPorId();
+        }
+
+        public IQueryable ObterProjetosClassificadosPorNome()
+        {
+            return projetoDAL.ObterProjetosClassificadosPorNome();
+        }        
 
         public void GravarProjeto(Projeto projeto)
         {

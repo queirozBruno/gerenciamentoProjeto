@@ -38,5 +38,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return idiomaUsuario;
         }
+
+        public IQueryable ObterIdiomaUsuarioPorUsuarioId(long id) => context.idiomaUsuarios.Where(iu => iu.UsuarioId == id).Include(i => i.idioma);
     }
 }

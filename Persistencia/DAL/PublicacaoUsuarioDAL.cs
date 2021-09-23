@@ -38,5 +38,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return publicacaoUsuario;
         }
+
+        public IQueryable ObterPublicacaoUsuarioPorUsuarioId(long id) => context.publicacaoUsuarios.Where(iu => iu.UsuarioId == id).Include(i => i.publicacao);
     }
 }

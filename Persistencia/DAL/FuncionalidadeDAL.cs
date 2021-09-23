@@ -13,6 +13,8 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterFuncionalidadesClassificadasPorNome(long ProjetoId) => context.funcionalidades.Where(p => p.ProjetoId == ProjetoId).OrderBy(n => n.FuncionalidadeNome);
+
         public void GravarFuncionalidade(Funcionalidade funcionalidade)
         {
             if (funcionalidade.FuncionalidadeId == null)
@@ -23,12 +25,10 @@ namespace Persistencia.DAL
             {
                 context.Entry(funcionalidade).State = EntityState.Modified;
             }
+            context.SaveChanges();
         }
 
-        public Funcionalidade ObterFuncionalidadePorId(long id)
-        {
-            return context.funcionalidades.Where(f => f.FuncionalidadeId == id).Include(p => p.projeto).First();
-        }
+        public Funcionalidade ObterFuncionalidadePorId(long id) => context.funcionalidades.Where(f => f.FuncionalidadeId == id).Include(p => p.projeto).First();
 
         public Funcionalidade EliminarFuncionalidadePorId(long id)
         {

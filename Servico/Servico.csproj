@@ -42,27 +42,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tabelas\CargoServico.cs" />
+    <Compile Include="Tabelas\AmizadeServico.cs" />
     <Compile Include="Tabelas\CertificadoServico.cs" />
     <Compile Include="Tabelas\CertificadoUsuarioServico.cs" />
     <Compile Include="Tabelas\CompetenciaServico.cs" />
     <Compile Include="Tabelas\CompetenciaUsuarioServico.cs" />
-    <Compile Include="Tabelas\CursoServico.cs" />
     <Compile Include="Tabelas\CursoUsuarioServico.cs" />
     <Compile Include="Tabelas\ExperienciaServico.cs" />
     <Compile Include="Tabelas\FormacaoAcademicaServico.cs" />
-    <Compile Include="Tabelas\FuncaoIntegranteServico.cs" />
-    <Compile Include="Tabelas\FuncaoServico.cs" />
     <Compile Include="Tabelas\FuncionalidadeServico.cs" />
     <Compile Include="Tabelas\IdiomaServico.cs" />
     <Compile Include="Tabelas\IdiomaUsuarioServico.cs" />
     <Compile Include="Tabelas\IntegranteServico.cs" />
     <Compile Include="Tabelas\LinguagemServico.cs" />
     <Compile Include="Tabelas\LinguagemUsuarioServico.cs" />
+    <Compile Include="Tabelas\ProductBacklogServico.cs" />
     <Compile Include="Tabelas\ProjetoServico.cs" />
     <Compile Include="Tabelas\PublicacaoServico.cs" />
     <Compile Include="Tabelas\PublicacaoUsuarioServico.cs" />
     <Compile Include="Tabelas\ResponsavelServico.cs" />
+    <Compile Include="Tabelas\ScrumServico.cs" />
+    <Compile Include="Tabelas\SprintBacklogServico.cs" />
+    <Compile Include="Tabelas\SprintServico.cs" />
     <Compile Include="Tabelas\UsuarioServico.cs" />
   </ItemGroup>
   <ItemGroup>

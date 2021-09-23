@@ -46,5 +46,9 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return certificado;
         }
+
+        public Certificado ObterCertificadoPorNome(string certificdo) => context.certificados.Where(i => i.CertificadoNome.ToUpper() == certificdo.ToUpper()).FirstOrDefault();
+
+        public bool VerificaSeCertificadoExiste(string certificdo) => context.certificados.Where(i => i.CertificadoNome.ToUpper() == certificdo.ToUpper()).Any();
     }
 }

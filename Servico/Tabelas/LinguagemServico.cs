@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private LinguagemDAL linguagemDAL = new LinguagemDAL();
 
+        public IQueryable ObterLinguagensClassificadasPorNome()
+        {
+            return linguagemDAL.ObterLinguagensClassificadasPorNome();
+        }
+
         public void GravarLinguagem(Linguagem linguagem)
         {
             linguagemDAL.GravarLinguagem(linguagem);
@@ -26,5 +31,9 @@ namespace Servico.Tabelas
         {
             return linguagemDAL.EliminarLinguagemPorId(id);
         }
+
+        public Linguagem ObterLinguagemPorNome(string linguagem) => linguagemDAL.ObterLinguagemPorNome(linguagem);
+
+        public bool VerificaSeLinguagemExiste(string linguagem) => linguagemDAL.VerificaSeLinguagemExiste(linguagem);
     }
 }

@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private FormacaoAcademicaDAL formacaoAcademicaDAL = new FormacaoAcademicaDAL();
 
+        public IQueryable ObterFormacoesAcademicasClassificadasPorNome()
+        {
+            return formacaoAcademicaDAL.ObterFormacaoAcademicasClassificadasPorNome();
+        }
+
         public void GravarFormacaoAcademica(FormacaoAcademica formacaoAcademica)
         {
             formacaoAcademicaDAL.GravarFormacaoAcademica(formacaoAcademica);

@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private ExperienciaDAL experienciaDAL = new ExperienciaDAL();
 
+        public IQueryable ObterExperinciasClassificadasPorNome()
+        {
+            return experienciaDAL.ObterExperienciaClassificadasPorUsuario();
+        }
+
         public void GravarExperiencia(Experiencia experiencia)
         {
             experienciaDAL.GravarExperiencia(experiencia);

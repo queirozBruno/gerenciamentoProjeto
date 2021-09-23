@@ -1,0 +1,64 @@
+﻿@model Modelo.Publicacao
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Publicacao</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PublicacaoTitulo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PublicacaoTitulo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PublicacaoEditora)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PublicacaoEditora)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PublicaçãoData)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PublicaçãoData)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PublicacaoUrl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PublicacaoUrl)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -14,8 +14,8 @@ namespace Modelo
         public string FormacaoInstituicao { get; set; }
         public string FormacaoFormacao { get; set; }
         public string FormacaoArea { get; set; }
-        public DateTime FormacaoAnoIni { get; set; }
-        public DateTime FormacaoAnoFim { get; set; }
+        public string FormacaoAnoIni { get; set; }
+        public string FormacaoAnoFim { get; set; }
         public string FormacaoDescricao { get; set; }
 
         public long? UsuarioId { get; set; }

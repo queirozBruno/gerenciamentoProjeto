@@ -1,0 +1,94 @@
+﻿@model Modelo.Tabelas.SprintBacklog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+    <div class="form-horizontal">
+        <h4>Alterar Status da Tarefa</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SprintBacklogId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SprintId, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SprintId, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+                @Html.ValidationMessageFor(model => model.SprintId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductBacklogId, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductBacklogId, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+                @Html.ValidationMessageFor(model => model.ProductBacklogId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EquipeScrumId, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EquipeScrumId, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+                @Html.ValidationMessageFor(model => model.EquipeScrumId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SprintBacklogNome, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SprintBacklogNome, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+                @Html.ValidationMessageFor(model => model.SprintBacklogNome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SprintBacklogDescricao, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SprintBacklogDescricao, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+                @Html.ValidationMessageFor(model => model.SprintBacklogDescricao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SprintBacklogEstimativa, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SprintBacklogEstimativa, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
+                @Html.ValidationMessageFor(model => model.SprintBacklogEstimativa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SprintBacklogStatus, "Status", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SprintBacklogStatus, new SelectList(new string[] { "À Fazer", "Fazendo", "Validando", "Pronto" }, null))
+                @Html.ValidationMessageFor(model => model.SprintBacklogStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+
+            </div>
+        </div>
+    </div>
+    }
+    
+<div>
+    @Html.ActionLink("Voltar", "Index", new { id = @Session["IDScrum"] })
+</div>
+</body>
+</html>

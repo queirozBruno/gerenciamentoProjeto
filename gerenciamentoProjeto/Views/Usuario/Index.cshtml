@@ -10,62 +10,18 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioSobrenome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioSenha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioCPF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioTelefone)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioSobrenome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioSenha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioCPF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioTelefone)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.UsuarioId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioId })
-            </td>
-        </tr>
-    }
-    
-    </table>
+    <div class="container" style="height: 300px">
+        <br /><br /><br /><br /><br /><h5 style="font-size: larger ;text-align: center"><b>Bem-vindo ao nosso site!<br />Entre com seu login ou faça um cadastro.</b></h5>
+    </div>
+    <div class="container">
+        <a href="~/Usuario/Create" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">Cadastrar</a>
+        <a href="~/Usuario/Login" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Entrar</a>
+    </div>
+
+    <!--<a href="Create" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">Cadastrar</a>
+    <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Entrar</a>-->
 </body>
 </html>

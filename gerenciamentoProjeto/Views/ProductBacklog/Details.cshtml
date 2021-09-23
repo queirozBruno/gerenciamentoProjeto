@@ -1,0 +1,59 @@
+﻿@model Modelo.Tabelas.ProductBacklog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Product Backlog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+    
+            <dt>
+                @Html.DisplayName("Nome do Produto")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductBacklogNome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Prioridade")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductBacklogPrioridade)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Descrição")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductBacklogDescricao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Notas (Breves informações, esclarecimentos, fontes, etc)")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductBacklogNotas)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ProductBacklogId }) |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

@@ -26,5 +26,7 @@ namespace Servico.Tabelas
         {
             return publicacaoUsuarioDAL.EliminarPublicacaoUsuarioPorId(id);
         }
+
+        public IQueryable ObterPublicacaoUsuarioPorUsuarioId(long id) => publicacaoUsuarioDAL.ObterPublicacaoUsuarioPorUsuarioId(id);
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerenciamentoProjeto", "gerenciamentoProjeto\gerenciamentoProjeto.csproj", "{B4319ECD-618B-4A68-B20E-2AF853060211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacao", "gerenciamentoProjeto\Aplicacao.csproj", "{B4319ECD-618B-4A68-B20E-2AF853060211}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{D4C96AB0-E002-4ECA-A219-1298E383CD5A}"
 EndProject

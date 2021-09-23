@@ -1,0 +1,58 @@
+﻿@model Modelo.Tabelas.Sprint
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Sprint</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Id do Scrum")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ScrumId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Meta")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintMeta)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Meta Alcançada ?")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintMetaAlcancada)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Sprint Review")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintReview)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.SprintId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

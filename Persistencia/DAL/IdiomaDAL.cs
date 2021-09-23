@@ -13,6 +13,8 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterIdiomaClassificadosPorNome() => context.idiomas.OrderBy(n => n.IdiomaNome);
+
         public void GravarIdioma(Idioma idioma)
         {
             if (idioma.IdiomaId == null)
@@ -26,10 +28,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
         }
 
-        public Idioma ObterIdiomaPorId(long id)
-        {
-            return context.idiomas.Where(i => i.IdiomaId == id).First();
-        }
+        public Idioma ObterIdiomaPorId(long id) => context.idiomas.Where(i => i.IdiomaId == id).First();
 
         public Idioma EliminarIdiomaPorId(long id)
         {
@@ -38,5 +37,9 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return idioma;
         }
+
+        public Idioma ObterIdiomaPorNome(string idioma) => context.idiomas.Where(i => i.IdiomaNome.ToUpper() == idioma.ToUpper()).FirstOrDefault();
+
+        public bool VerificaSeIdiomaExiste(string idioma) => context.idiomas.Where(i => i.IdiomaNome.ToUpper() == idioma.ToUpper()).Any();
     }
 }

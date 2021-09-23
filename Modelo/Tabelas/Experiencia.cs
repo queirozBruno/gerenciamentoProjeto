@@ -9,15 +9,16 @@ namespace Modelo
     public class Experiencia
     {
         public long? ExperienciaId { get; set; }
-        public string ExperienciaCargo { get; set; }
-        public string ExperienciaEmpresa { get; set; }
-        public string ExperienciaLocalidade { get; set; }
-        public DateTime ExperienciaDataIni { get; set; }
-        public DateTime ExperienciaDataFim { get; set; }
         public string ExperienciaDescricao { get; set; }
-
         public long? UsuarioId { get; set; }
+        public string ExperienciaDataInicio { get; set; }
+        public string ExperienciaDataFinal { get; set; }
+        public string ExperienciaLocal { get; set; }
+        public string ExperienciaCargo {get; set;}
+        public bool ExperienciaAtual { get; set; }
+        public string ExperienciaTipo { get; set; }
+        public string ExperienciaEmpresa { get; set; }
 
-        public Modelo.Usuario usuario { get; set; }
+        public Usuario usuario { get; set; }
     }
 }

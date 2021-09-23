@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Persistencia.Contexts;
 using Modelo;
 using System.Data.Entity;
@@ -38,5 +34,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return linguagemUsuario;
         }
+
+        public IQueryable ObterLinguagemUsuarioPorUsuarioId(long id) => context.linguagemUsuarios.Where(iu => iu.UsuarioId == id).Include(i => i.linguagem);
     }
 }

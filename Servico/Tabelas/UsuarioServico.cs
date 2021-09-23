@@ -31,5 +31,16 @@ namespace Servico.Tabelas
         {
             return usuarioDAL.EliminarUsuarioPorId(id);
         }
+
+        public Usuario ObterUsuarioPorEmail(Usuario usuario)
+        {
+            return usuarioDAL.ObterUsuarioPorEmail(usuario);
+        }
+
+        public IQueryable ObterUsuarioPorCPF(string cpf) => usuarioDAL.ObterUsuarioPorCPF(cpf);
+
+        public Usuario AdicionarIntegrantePorEmail(string email) => usuarioDAL.AdicionarIntegrantePorEmail(email);
+
+        public Usuario ObterTodosOsDadosDoUsuarioPorId(long id) => usuarioDAL.ObterTodosOsDadosDoUsuarioPorId(id);
     }
 }

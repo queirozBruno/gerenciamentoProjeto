@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private PublicacaoDAL publicacaoDAL = new PublicacaoDAL();
 
+        public IQueryable ObterPublicacoesClassificadasPorNome()
+        {
+            return publicacaoDAL.ObterProjetosClassificadosPorNome();
+        }
+
         public void GravarPublicacao(Publicacao publicacao)
         {
             publicacaoDAL.GravarPublicacao(publicacao);
@@ -26,5 +31,9 @@ namespace Servico.Tabelas
         {
             return publicacaoDAL.EliminarPublicacaoPorId(id);
         }
+
+        public Publicacao ObterPublicacaoPorNome(string publicacao) => publicacaoDAL.ObterPublicacaoPorNome(publicacao);
+
+        public bool VerificaSePublicacaoExiste(string publicacao) => publicacaoDAL.VerificaSePublicacaoExiste(publicacao);
     }
 }

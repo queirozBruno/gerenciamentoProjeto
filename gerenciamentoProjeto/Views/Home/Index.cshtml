@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/javascripts/bootstrap.js"></script>
+    <script src="~/javascripts/bootstrap/popover.js"></script>
+    <script src="~/javascripts/bootstrap/dropdown.js"></script>
+    <script src="~/javascripts/bootstrap/modal.js"></script>
+    <script src="~/Scripts/umd/popper-utils.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #f9f9f9;
+        }
+
+        #check{
+            display: none;
+        }
+
+        #icone{
+            cursor: pointer;
+            padding: 15px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .barra{
+            background-color: #333;
+            height: 100%;
+            width: 300px;
+            position: absolute;
+            transition: all .2s linear;
+            left: -250px;
+        }
+
+        nav{
+            width: 100%;
+            position: absolute;
+            top: 60px;
+        }
+
+        nav a{
+            text-decoration: none;
+        }
+
+        .link {
+            background-color: #494950;
+            padding: 20px;
+            font-family: Arial;
+            font-size: 12pt;
+            transition: all .2s linear;
+            color: #f4f4f9;
+            border-bottom: 2px solid #222;
+        }
+
+        .link:hover{
+            background-color: #050542;
+        }
+
+        #check:checked ~ .barra{
+            transform: translateX(300px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <a class="navbar-brand" style="text-align: center; color: white">Home</a>
+    </nav>
+    @{ if (Session["Nome"] == null)
+        {
+            <div class="text-center">
+                <h2>Para ter acesso, execute @Html.ActionLink("Login", "Login", "Usuario").</h2>
+            </div>
+        }
+        else
+        {
+            <div class="text-center"><h2>Bem-vindo(a), @Session["Nome"]</h2></div>
+        }
+        <input type="checkbox" id="check" />
+        <label id="icone" for="check"><img scr="~/images/icone.png"></label>
+        <div class="barra">
+            <nav>
+                <a href=""><div class="link">Home</div></a>
+                <a href=""><div class="link">Projeto</div></a>
+                <a href=""><div class="link">Gerencial</div></a>
+                <a href=""><div class="link">Sem definicao</div></a>
+                <a href=""><div class="link">Contato</div></a>
+            </nav>
+        </div>
+    }
+</body>
+</html>

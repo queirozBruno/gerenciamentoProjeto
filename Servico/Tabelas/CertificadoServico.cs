@@ -31,5 +31,8 @@ namespace Servico.Tabelas
         {
             return certificadoDAL.EliminarCertificadoPorId(id);
         }
+
+        public Certificado ObterCertificadoPorNome(string certificado) => certificadoDAL.ObterCertificadoPorNome(certificado);
+        public bool VerificaSeCertificadoExiste(string certificado) => certificadoDAL.VerificaSeCertificadoExiste(certificado);
     }
 }

@@ -13,6 +13,15 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterIntegrantesClassificadosPorNome(long? projetoId)
+        {
+            return context.integrantes.Where(p => p.ProjetoId == projetoId).Include(u => u.usuario).OrderBy(n => n.usuario.UsuarioNome);
+        }
+
+        public Integrante ObterIntegrantePorEmail(string email) => context.integrantes.Where(u => u.usuario.UsuarioEmail == email).FirstOrDefault();
+
+        public object ObterProjetosPorUsuario(long id) => context.integrantes.Where(i => i.UsuarioId == id).Include(p => p.projeto).OrderBy(n => n.projeto.ProjetoId).ToList();
+
         public void GravarIntegrante(Integrante integrante)
         {
             if (integrante.IntegranteId == null)
@@ -28,7 +37,7 @@ namespace Persistencia.DAL
 
         public Integrante ObterIntegrantePorId(long id)
         {
-            return context.integrantes.Where(i => i.IntegranteId == id).Include(p => p.projeto).Include(u => u.usuario).Include(c => c.cargo).First();
+            return context.integrantes.Where(i => i.IntegranteId == id).Include(p => p.projeto).Include(u => u.usuario).First();
         }
 
         public Integrante EliminarIntegrantePorId(long id)
@@ -37,6 +46,14 @@ namespace Persistencia.DAL
             context.integrantes.Remove(integrante);
             context.SaveChanges();
             return integrante;
+        }
+
+        public bool VerificarSeProjetoJaTemIntegrante(long id) 
+        {
+            if (context.integrantes.Where(i => i.ProjetoId == id).Count() > 0)
+                return true;
+            else
+                return false;            
         }
     }
 }

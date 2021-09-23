@@ -31,10 +31,19 @@ namespace Persistencia.DAL
             context.SaveChanges();
         }
 
-        public Usuario ObterUsuarioPorId(long id)
+        public Usuario ObterUsuarioPorId(long id) => context.usuarios.Where(u => u.UsuarioId == id).First();
+
+        public Usuario ObterTodosOsDadosDoUsuarioPorId(long id)
         {
-            return context.usuarios.Where(u => u.UsuarioId == id).First();
+            return context.usuarios.Where(u => u.UsuarioId == id).Include(cuu => cuu.CursoUsuarios).Include(ceu => ceu.CertificadoUsuarios).Include(idu => idu.IdiomaUsuarios).Include(liu => liu.LinguagemUsuarios).Include(puu => puu.PublicacaoUsuarios).Include(cou => cou.CompetenciaUsuarios).Include(fou => fou.FormacaoAcademicas).Include(exu => exu.Experiencias).First();
         }
+
+        public Usuario ObterUsuarioPorEmail(Usuario usuario)
+        {
+            return context.usuarios.Where(u => u.UsuarioEmail.Equals(usuario.UsuarioEmail)).FirstOrDefault();
+        }
+
+        public Usuario AdicionarIntegrantePorEmail(string email) => context.usuarios.Where(u => u.UsuarioEmail.Equals(email)).FirstOrDefault();
 
         public Usuario EliminarUsuarioPorId(long id)
         {
@@ -43,5 +52,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return usuario;
         }
+
+        public IQueryable ObterUsuarioPorCPF(string cpf) => context.usuarios.Where(u => u.UsuarioCPF.Contains(cpf));
     }
 }

@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterProjetosClassificadosPorNome()
+        {
+            return context.projetos.OrderBy(n => n.ProjetoNome);
+        }
+
         public void GravarPublicacao(Publicacao publicacao)
         {
             if (publicacao.PublicacaoId == null)
@@ -38,5 +43,9 @@ namespace Persistencia.DAL
             context.SaveChanges();
             return publicacao;
         }
+
+        public Publicacao ObterPublicacaoPorNome(string publicacao) => context.publicacaos.Where(i => i.PublicacaoTitulo.ToUpper() == publicacao.ToUpper()).FirstOrDefault();
+
+        public bool VerificaSePublicacaoExiste(string publicacao) => context.publicacaos.Where(i => i.PublicacaoTitulo.ToUpper() == publicacao.ToUpper()).Any();
     }
 }

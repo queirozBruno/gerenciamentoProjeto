@@ -12,19 +12,18 @@ namespace Servico.Tabelas
     {
         private IntegranteDAL integranteDAL = new IntegranteDAL();
 
-        public void GravarIntegrante(Integrante integrante)
-        {
-            integranteDAL.GravarIntegrante(integrante);
-        }
+        public IQueryable ObterIntegrantesClassificadosPorNome(long? projetoId) => integranteDAL.ObterIntegrantesClassificadosPorNome(projetoId);
 
-        public Integrante ObterIntegrantePorId(long id)
-        {
-            return integranteDAL.ObterIntegrantePorId(id);
-        }
+        public Integrante ObterIntegrantePorEmail(string email) => integranteDAL.ObterIntegrantePorEmail(email);
 
-        public Integrante EliminarIntegrantePorId(long id)
-        {
-            return integranteDAL.EliminarIntegrantePorId(id);
-        }
+        public object ObterProjetosPorUsuario(long id) => integranteDAL.ObterProjetosPorUsuario(id);
+
+        public void GravarIntegrante(Integrante integrante) => integranteDAL.GravarIntegrante(integrante);        
+
+        public Integrante ObterIntegrantePorId(long id) => integranteDAL.ObterIntegrantePorId(id);
+
+        public Integrante EliminarIntegrantePorId(long id) => integranteDAL.EliminarIntegrantePorId(id);
+
+        public bool VerificarSeProjetoJaTemIntegrante(long id) => integranteDAL.VerificarSeProjetoJaTemIntegrante(id);
     }
 }

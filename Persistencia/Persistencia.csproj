@@ -49,28 +49,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\EFContext.cs" />
-    <Compile Include="DAL\CargoDAL.cs" />
+    <Compile Include="DAL\AmizadeDAL.cs" />
     <Compile Include="DAL\CertificadoDAL.cs" />
     <Compile Include="DAL\CertificadoUsuarioDAL.cs" />
     <Compile Include="DAL\CompetenciaDAL.cs" />
     <Compile Include="DAL\CompetenciaUsuarioDAL.cs" />
-    <Compile Include="DAL\CursoDAL.cs" />
     <Compile Include="DAL\CursoUsuarioDAL.cs" />
     <Compile Include="DAL\ExperienciaDAL.cs" />
     <Compile Include="DAL\FormacaoAcademicaDAL.cs" />
-    <Compile Include="DAL\FuncaoDAL.cs" />
-    <Compile Include="DAL\FuncaoIntegranteDAL.cs" />
     <Compile Include="DAL\FuncionalidadeDAL.cs" />
     <Compile Include="DAL\IdiomaDAL.cs" />
     <Compile Include="DAL\IdiomaUsuarioDAL.cs" />
     <Compile Include="DAL\IntegranteDAL.cs" />
     <Compile Include="DAL\LinguagemDAL.cs" />
     <Compile Include="DAL\LinguagemUsuarioDAL.cs" />
+    <Compile Include="DAL\ProductBacklogDAL.cs" />
     <Compile Include="DAL\ProjetoDAL.cs" />
     <Compile Include="DAL\PublicacaoDAL.cs" />
     <Compile Include="DAL\PublicacaoUsuarioDAL.cs" />
     <Compile Include="DAL\ResponsavelDAL.cs" />
+    <Compile Include="DAL\ScrumDAL.cs" />
+    <Compile Include="DAL\SprintBacklogDAL.cs" />
+    <Compile Include="DAL\SprintDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +85,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

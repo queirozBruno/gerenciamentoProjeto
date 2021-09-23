@@ -1,0 +1,57 @@
+﻿@model Modelo.Tabelas.Sprint
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Você tem certeza que deseja deletar esta Sprint ?</h3>
+    <div>
+        <h4>Sprint</h4>
+        <hr />
+        <dl class="dl-horizontal">
+    
+            <dt>
+                @Html.DisplayName("Meta")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintMeta)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Meta Alcançada ?")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintMetaAlcancada)
+            </dd>
+    
+            <dt>
+                @Html.DisplayName("Sprint Review")
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintReview)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Deletar" class="btn btn-default" /> |
+                @Html.ActionLink("Sprints", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

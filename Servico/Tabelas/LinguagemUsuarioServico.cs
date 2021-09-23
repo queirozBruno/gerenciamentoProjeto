@@ -26,5 +26,7 @@ namespace Servico.Tabelas
         {
             return linguagemUsuarioDAL.EliminarLinguagemUsuarioPorId(id);
         }
+
+        public IQueryable ObterLinguagemUsuarioPorUsuarioId(long id) => linguagemUsuarioDAL.ObterLinguagemUsuarioPorUsuarioId(id);
     }
 }

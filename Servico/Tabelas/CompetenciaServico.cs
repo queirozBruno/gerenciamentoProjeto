@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private CompetenciaDAL competenciaDAL = new CompetenciaDAL();
 
+        public IQueryable ObterCompetenciasClassificadasPorNome()
+        {
+            return competenciaDAL.ObterCompetenciaClassificadasPorNome();
+        }
+
         public void GravarCompetencia(Competencia competencia)
         {
             competenciaDAL.GravarCompetencia(competencia);
@@ -26,5 +31,9 @@ namespace Servico.Tabelas
         {
             return competenciaDAL.EliminarCompetenciaPorId(id);
         }
+
+        public Competencia ObterCompetenciaPorNome(string competencia) => competenciaDAL.ObterCompetenciaPorNome(competencia);
+
+        public bool VerificaSeCompetenciaExiste(string competencia) => competenciaDAL.VerificaSeCompetenciaExiste(competencia);
     }
 }

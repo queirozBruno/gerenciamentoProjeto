@@ -13,7 +13,7 @@ namespace Modelo
         public long? LinguagemId { get; set; }
         public long? UsuarioId { get; set; }
 
-        public Modelo.Linguagem linguagem { get; set; }
-        public Modelo.Usuario usuario { get; set; }
+        public Linguagem linguagem { get; set; }
+        public Usuario usuario { get; set; }
     }
 }

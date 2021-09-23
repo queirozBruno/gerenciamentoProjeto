@@ -10,10 +10,10 @@ namespace Modelo
     {
         public long? CursoUsuarioId { get; set; }
 
-        public long? CursoId { get; set; }
         public long? UsuarioId { get; set; }
+        public String CursoNome { get; set; }
+        public String CursoDescricao { get; set; }
 
-        public Modelo.Curso curso { get; set; }
         public Modelo.Usuario usuario { get; set; }
     }
 }

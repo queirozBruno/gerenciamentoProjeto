@@ -13,6 +13,11 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterFormacaoAcademicasClassificadasPorNome()
+        {
+            return context.formacaoAcademicas.OrderBy(n => n.FormacaoArea);
+        }
+
         public void GravarFormacaoAcademica(FormacaoAcademica formacaoAcademica)
         {
             if (formacaoAcademica.FormacaoId == null)

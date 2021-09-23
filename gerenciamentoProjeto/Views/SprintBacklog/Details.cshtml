@@ -1,0 +1,58 @@
+﻿@model Modelo.Tabelas.SprintBacklog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>SprintBacklog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SprintId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductBacklogId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductBacklogId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.EquipeScrumId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.EquipeScrumId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SprintBacklogEstimativa)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SprintBacklogEstimativa)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SprintBacklogId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

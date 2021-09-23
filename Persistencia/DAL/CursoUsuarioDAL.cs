@@ -13,6 +13,16 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        public IQueryable ObterCursoUsuarioClassificadosPorNome()
+        {
+            return context.cursoUsuarios.OrderBy(n => n.CursoNome);
+        }
+
+        public IQueryable ObterVisaoCursoUsuario()
+        {
+            return context.cursoUsuarios.OrderBy(n => n.CursoNome).OrderBy(nu => nu.usuario.UsuarioNome);
+        }
+
         //Inserção e atualização
         public void GravarCursoUsuario(CursoUsuario cursoUsuario)
         {
@@ -30,7 +40,7 @@ namespace Persistencia.DAL
         //Leitura
         public CursoUsuario ObterCursoUsuarioPorId(long id)
         {
-            return context.cursoUsuarios.Where(cu => cu.CursoUsuarioId == id).Include(c => c.curso).Include(u => u.usuario).First();
+            return context.cursoUsuarios.Where(cu => cu.CursoUsuarioId == id).Include(u => u.usuario).First();
         }
 
         //Delete

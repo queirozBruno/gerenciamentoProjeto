@@ -13,6 +13,12 @@ namespace Persistencia.DAL
     {
         private EFContext context = new EFContext();
 
+        //Se for usar tem que ver a necessidade de colocar parâmetro(id do usuário, por exemplo)
+        public IQueryable ObterExperienciaClassificadasPorUsuario()
+        {
+            return context.experiencias;
+        }
+
         public void GravarExperiencia(Experiencia experiencia)
         {
             if (experiencia.ExperienciaId == null)

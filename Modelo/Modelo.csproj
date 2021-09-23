@@ -37,6 +37,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Migrations, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Migrations.1.0.1.0\lib\net40-Client\Migrations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -48,28 +54,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tabelas\Cargo.cs" />
+    <Compile Include="Tabelas\Amizade.cs" />
     <Compile Include="Tabelas\Certificado.cs" />
     <Compile Include="Tabelas\CertificadoUsuario.cs" />
     <Compile Include="Tabelas\Competencia.cs" />
     <Compile Include="Tabelas\CompetenciaUsuario.cs" />
-    <Compile Include="Tabelas\Curso.cs" />
     <Compile Include="Tabelas\CursoUsuario.cs" />
     <Compile Include="Tabelas\Experiencia.cs" />
     <Compile Include="Tabelas\FormacaoAcademica.cs" />
-    <Compile Include="Tabelas\Funcao.cs" />
-    <Compile Include="Tabelas\FuncaoIntegrante.cs" />
     <Compile Include="Tabelas\Funcionalidade.cs" />
+    <Compile Include="Tabelas\HistoricoTarefa.cs" />
     <Compile Include="Tabelas\Idioma.cs" />
     <Compile Include="Tabelas\IdiomaUsuario.cs" />
     <Compile Include="Tabelas\Integrante.cs" />
     <Compile Include="Tabelas\Linguagem.cs" />
     <Compile Include="Tabelas\LinguagemUsuario.cs" />
+    <Compile Include="Tabelas\ProductBacklog.cs" />
     <Compile Include="Tabelas\Projeto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tabelas\Publicacao.cs" />
     <Compile Include="Tabelas\PublicacaoUsuario.cs" />
     <Compile Include="Tabelas\Responsavel.cs" />
+    <Compile Include="Tabelas\EquipeScrum.cs" />
+    <Compile Include="Tabelas\Scrum.cs" />
+    <Compile Include="Tabelas\Sprint.cs" />
+    <Compile Include="Tabelas\SprintBacklog.cs" />
+    <Compile Include="Tabelas\SprintFator.cs" />
     <Compile Include="Tabelas\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

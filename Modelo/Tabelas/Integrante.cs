@@ -10,16 +10,14 @@ namespace Modelo
     {
         public long? IntegranteId { get; set; }
         public string IntegranteDescricao { get; set; }
+        public string IntegranteFuncao { get; set; }
 
         public long? ProjetoId { get; set; }
         public long? UsuarioId { get; set; }
-        public long? CargoId { get; set; }
 
-        public Modelo.Projeto projeto { get; set; }
-        public Modelo.Usuario usuario { get; set; }
-        public Modelo.Cargo cargo { get; set; }
+        public Projeto projeto { get; set; }
+        public Usuario usuario { get; set; }
 
-        public virtual ICollection<FuncaoIntegrante> FuncaoIntegrantes { get; set; }
-        public virtual ICollection<Responsavel> Responsavels { get; set; }
+        public virtual ICollection<Responsavel> Responsaveis { get; set; }
     }
 }

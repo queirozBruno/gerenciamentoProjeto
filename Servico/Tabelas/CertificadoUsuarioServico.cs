@@ -12,6 +12,11 @@ namespace Servico.Tabelas
     {
         private CertificadoUsuarioDAL certificadoUsuarioDAL = new CertificadoUsuarioDAL();
 
+        public IQueryable ObterCertificadoUsuarioClassificadosPorNome()
+        {
+            return certificadoUsuarioDAL.ObterCertificadoUsuarioClassificadosPorNome();
+        }
+
         public CertificadoUsuario ObterCertificadoUsuarioPorId(long id)
         {
             return certificadoUsuarioDAL.ObterCertificadoUsuarioPorId(id);
@@ -26,5 +31,7 @@ namespace Servico.Tabelas
         {
             return certificadoUsuarioDAL.EliminarCertificadoUsuarioPorId(id);
         }
+
+        public IQueryable ObterCertificadoUsuarioPorUsuarioId(long id) => certificadoUsuarioDAL.ObterCertificadoUsuarioPorUsuarioId(id);
     }
 }
